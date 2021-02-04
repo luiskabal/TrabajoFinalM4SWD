@@ -42,6 +42,6 @@
 ## 10%
 http://localhost:8080/rest/msdxc/dxc?sueldo=1500000&ahorro=71400000
 ## Saldo restante
-http://localhost:8080/rest/msdxc/dxc?saldo=1500000&ahorro=71400000
+http://localhost:8080/rest/msdxc/saldo?sueldo=1500000&ahorro=71400000
 ## Impuesto
-http://localhost:8080/rest/msdxc/dxc?impuesto=1500000&ahorro=71400000
+http://localhost:8080/rest/msdxc/impuesto?sueldo=1500000&ahorro=71400000
