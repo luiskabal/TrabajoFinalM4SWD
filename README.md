@@ -17,7 +17,7 @@
 
 ### Testing Application
 #### Ahorro y sueldo valores a modificar
-* Abrir navegador: http://localhost:8080/rest/msdxc/dxc?sueldo=1500000&ahorro=71400000
+* Abrir navegador: http://localhost:8080/rest/msdxc/test?sueldo=1500000&ahorro=71400000
 
 ## Linux
 
@@ -36,4 +36,12 @@
 
 ### Testing Application
 #### Ahorro y sueldo valores a modificar
-* curl -X GET 'http://localhost:8080/rest/msdxc/dxc?sueldo=1500000&ahorro=71400000'
+* curl -X GET 'http://localhost:8080/rest/msdxc/test?sueldo=1500000&ahorro=71400000'
+
+### Endpoints
+## 10%
+http://localhost:8080/rest/msdxc/dxc?sueldo=1500000&ahorro=71400000
+## Saldo restante
+http://localhost:8080/rest/msdxc/dxc?saldo=1500000&ahorro=71400000
+## Impuesto
+http://localhost:8080/rest/msdxc/dxc?impuesto=1500000&ahorro=71400000
