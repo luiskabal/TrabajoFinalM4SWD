@@ -38,6 +38,19 @@ class UtilTest {
 		int verif10 = Util.getDxc(ahorro, sueldo);
 		assertNotNull(verif10);
 		assertEquals(870000, verif10);
+    }
+    
+    /**
+	 *  Caso de uso: ahorro mayor a 1 millón (35 UF) y menor a 10.000.000.
+	 * @throws IOException 
+	 */
+	@Test
+	void testAhorroMedio() throws IOException {
+		int ahorro = 8700000;
+		int sueldo = 350000;
+		int verif10 = Util.getDxc(ahorro, sueldo);
+		assertNotNull(verif10);
+		assertEquals(35*Util.getUf(), verif10);
 	}
 	
 	/**

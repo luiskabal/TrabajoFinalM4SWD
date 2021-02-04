@@ -25,8 +25,8 @@ public class Util {
         try {
 			if(((ahorro*0.1)/getUf()) > 150 ){
 			    return (int) (150*getUf()) ;
-			} else if((ahorro*0.1)<=1000000 && ahorro >=1000000){
-			    return (int) 1000000;
+			} else if((ahorro*0.1)<=35*getUf() && ahorro >=35*getUf()){
+			    return (int) (35*getUf());
 			} else if( ahorro <=1000000){
 			    return (int) ahorro;
 			} else {
