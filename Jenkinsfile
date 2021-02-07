@@ -12,7 +12,7 @@ pipeline {
             stage('Test') {
                 steps {
                     //sh './mvnw clean test -e' //Linux / macOS
-                    bat 'mvn clean test -Dtest=UnitTest -DrequestsToEnv= test' //Windows
+                    bat 'mvn clean test -Dtest=UtilTest -DrequestsToEnv= test' //Windows
                 }
             }
             stage('Jar') {
