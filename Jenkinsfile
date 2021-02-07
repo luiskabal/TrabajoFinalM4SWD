@@ -17,7 +17,8 @@ pipeline {
             stage ('Run Jar') {
                 steps {
                     //sh 'nohup bash mvnw spring-boot:run &' //Linux / macOS
-                    bat 'nohup bash mvnw.cmd spring-boot:run &' //Windows
+                     bat 'start java -jar DevOpsUsach2020-0.0.1-develop.jar' //Windows
+    		     sleep 7 
                 }
             }
 			
