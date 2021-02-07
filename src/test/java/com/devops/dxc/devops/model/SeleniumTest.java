@@ -41,7 +41,7 @@ class SeleniumTest {
 	    driver = new ChromeDriver();
 	    js = (JavascriptExecutor) driver;
 	    vars = new HashMap<String, Object>();
-	    driver.get("http://localhost:8081/");
+	    driver.get("http://localhost:8090/");
 	    //driver.manage().window().setSize(new Dimension(1900, 1020));
 	    driver.findElement(By.id("input-5")).click();
 	    driver.findElement(By.id("input-5")).sendKeys(String.valueOf(sueldo));
@@ -86,7 +86,7 @@ class SeleniumTest {
 	    driver = new ChromeDriver();
 	    js = (JavascriptExecutor) driver;
 	    vars = new HashMap<String, Object>();
-	    driver.get("http://localhost:8081/");
+	    driver.get("http://localhost:8090/");
 	    //driver.manage().window().setSize(new Dimension(1900, 1020));
 	    driver.findElement(By.id("input-5")).click();
 	    driver.findElement(By.id("input-5")).sendKeys(String.valueOf(sueldo));
@@ -131,7 +131,7 @@ class SeleniumTest {
 	    driver = new ChromeDriver();
 	    js = (JavascriptExecutor) driver;
 	    vars = new HashMap<String, Object>();
-	    driver.get("http://localhost:8081/");
+	    driver.get("http://localhost:8090/");
 	    //driver.manage().window().setSize(new Dimension(1900, 1020));
 	    driver.findElement(By.id("input-5")).click();
 	    driver.findElement(By.id("input-5")).sendKeys(String.valueOf(sueldo));
@@ -176,7 +176,7 @@ class SeleniumTest {
 	    driver = new ChromeDriver();
 	    js = (JavascriptExecutor) driver;
 	    vars = new HashMap<String, Object>();
-	    driver.get("http://localhost:8081/");
+	    driver.get("http://localhost:8090/");
 	    //driver.manage().window().setSize(new Dimension(1900, 1020));
 	    driver.findElement(By.id("input-5")).click();
 	    driver.findElement(By.id("input-5")).sendKeys(String.valueOf(sueldo));
@@ -220,7 +220,7 @@ class SeleniumTest {
 	    driver = new ChromeDriver();
 	    js = (JavascriptExecutor) driver;
 	    vars = new HashMap<String, Object>();
-	    driver.get("http://localhost:8081/");
+	    driver.get("http://localhost:8090/");
 	    //driver.manage().window().setSize(new Dimension(1900, 1020));
 	    driver.findElement(By.id("input-5")).click();
 	    driver.findElement(By.id("input-5")).sendKeys(String.valueOf(sueldo));
