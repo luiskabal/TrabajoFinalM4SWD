@@ -24,7 +24,7 @@
 newman run src/test/postman/dxc.json --delay-request 1000 -n 2
 
 ### SeleniumTest
-mvn clean test -Dtest=seleniumTest -DrequestsToEnv= test
+mvn clean test -Dtest=SeleniumTest -DrequestsToEnv= test
 
 
 ## Linux
