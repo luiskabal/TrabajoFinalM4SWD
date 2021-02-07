@@ -72,7 +72,7 @@ class UtilTest {
 		int sueldo = 5000000;
 		double impuesto = Util.getImpuesto(ahorro, sueldo);
         assertNotNull(impuesto);
-        double supposedImp = 150 * Util.getUf() * 0.304;
+        double supposedImp = (int)(150 * Util.getUf() * 0.304);
 		assertEquals(supposedImp, impuesto);
 	}
 	
