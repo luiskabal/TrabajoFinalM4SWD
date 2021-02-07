@@ -8,16 +8,16 @@ pipeline {
                     bat './mvnw.cmd clean compile -e' //Windows
                 }
             }
-           /* stage('Jar') {
+            stage('Jar') {
                 steps {
                     //sh './mvnw clean package -e' //Linux / macOS
-                    bat './mvnw.cmd clean package -e' //Windows
+                    bat './mvnw.cmd clean package -e -Dmaven.test.skip=true' //Windows
                 }
-            }*/
-            stage ('Run Jar') {
+	    }
+	    stage ('Run Jar') {
                 steps {
                     //sh 'nohup bash mvnw spring-boot:run &' //Linux / macOS
-                     bat 'start java -jar DevOpsUsach2020-0.0.1-develop.jar' //Windows
+                     bat 'start java -jar devops-0.0.1-SNAPSHOT.jar' //Windows
     		     sleep 7 
                 }
             }
