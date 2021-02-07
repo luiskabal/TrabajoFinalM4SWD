@@ -19,6 +19,11 @@
 #### Ahorro y sueldo valores a modificar
 * Abrir navegador: http://localhost:8080/rest/msdxc/test?sueldo=1500000&ahorro=71400000
 
+
+### postman
+newman run src/test/postman/dxc.json --delay-request 1000 -n 2
+
+
 ## Linux
 
 ### Compile Code

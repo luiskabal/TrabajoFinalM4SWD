@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "9877df95-a519-46b5-9652-db99e5fed3b1",
+		"name": "DXC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "dxc",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//https://learning.postman.com/docs/writing-scripts/script-references/test-examples/#testing-response-times\r",
+							"console.log(pm.response.json()[0]);\r",
+							"\r",
+							"// validacion de headers\r",
+							"pm.test(\"Content-Type\", function () {\r",
+							"    pm.expect(pm.response).to.have.header(\"Content-Type\");\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r",
+							"});\r",
+							"\r",
+							"// validacion de status code\r",
+							"pm.test(\"Status code is 200\", function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"});\r",
+							"\r",
+							"// validacion de SLA\r",
+							"const delay = 1500;\r",
+							"pm.test(\"Response time is less than \"+delay+\"ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(delay);\r",
+							"});\r",
+							"\r",
+							"/*\r",
+							"// validacion  de estructura \"en duro\"\r",
+							"pm.test(\"Response is an array\", function(){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an(\"array\");\r",
+							"    pm.expect(jsonData).to.be.not.empty;\r",
+							"    pm.expect(jsonData[0]).to.be.an(\"object\");\r",
+							"    pm.expect(jsonData[0].code).to.be.a(\"string\");\r",
+							"    pm.expect(jsonData[0].title).to.be.a(\"string\");\r",
+							"});\r",
+							"\r",
+							"// validacion de estructura contra schema \r",
+							"const schema = {\r",
+							"\t\t\"type\": \"array\",\r",
+							"\t\t\"items\": {\r",
+							"\t\t\t\"type\": \"object\",\r",
+							"            \"required\": [\"code\",\"title\",\"description\",\"uri\"],\r",
+							"            \"properties\": {\r",
+							"                \"code\": { \"type\":  [\"string\"] },\r",
+							"                \"title\": { \"type\":  [\"string\"] },\r",
+							"                \"description\": { \"type\":  [\"string\"] },\r",
+							"                \"uri\": { \"type\":  [\"string\"] }\r",
+							"            }\r",
+							"        }\r",
+							"};\r",
+							"\r",
+							"pm.test('Schema is valid', function() {\r",
+							"  pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest/msdxc/dxc?sueldo=1500000&ahorro=71400000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"msdxc",
+						"dxc"
+					],
+					"query": [
+						{
+							"key": "sueldo",
+							"value": "1500000"
+						},
+						{
+							"key": "ahorro",
+							"value": "71400000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//https://learning.postman.com/docs/writing-scripts/script-references/test-examples/#testing-response-times\r",
+							"console.log(pm.response.json()[0]);\r",
+							"\r",
+							"// validacion de headers\r",
+							"pm.test(\"Content-Type\", function () {\r",
+							"    pm.expect(pm.response).to.have.header(\"Content-Type\");\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r",
+							"});\r",
+							"\r",
+							"// validacion de status code\r",
+							"pm.test(\"Status code is 200\", function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"});\r",
+							"\r",
+							"// validacion de SLA\r",
+							"const delay = 5000;\r",
+							"pm.test(\"Response time is less than \"+delay+\"ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(delay);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"// validacion  de estructura \"en duro\"\r",
+							"pm.test(\"Response is an òbject\", function(){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an(\"object\");\r",
+							"    pm.expect(jsonData.dxc).to.be.a(\"number\");\r",
+							"    pm.expect(jsonData.saldo).to.be.a(\"number\");\r",
+							"    pm.expect(jsonData.impuesto).to.be.a(\"number\");\r",
+							"    pm.expect(jsonData.sueldo).to.be.a(\"number\");\r",
+							"    pm.expect(jsonData.ahorro).to.be.a(\"number\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"// validacion de estructura contra schema \r",
+							"const schema = {\r",
+							"    \"type\": \"object\",\r",
+							"    \"required\": [\"dxc\",\"saldo\",\"impuesto\",\"sueldo\",\"ahorro\"],\r",
+							"    \"properties\": {\r",
+							"        \"dxc\": { \"type\":  [\"number\"] },\r",
+							"        \"saldo\": { \"type\":  [\"number\"] },\r",
+							"        \"impuesto\": { \"type\":  [\"number\"] },\r",
+							"        \"sueldo\": { \"type\":  [\"number\"] },\r",
+							"        \"ahorro\": { \"type\":  [\"number\"] }\r",
+							"    }\r",
+							"};\r",
+							"\r",
+							"pm.test('Schema is valid', function() {\r",
+							"  pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest/msdxc/test?sueldo=1500000&ahorro=71400000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"msdxc",
+						"test"
+					],
+					"query": [
+						{
+							"key": "sueldo",
+							"value": "1500000"
+						},
+						{
+							"key": "ahorro",
+							"value": "71400000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saldo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//https://learning.postman.com/docs/writing-scripts/script-references/test-examples/#testing-response-times\r",
+							"console.log(pm.response.json()[0]);\r",
+							"\r",
+							"// validacion de headers\r",
+							"pm.test(\"Content-Type\", function () {\r",
+							"    pm.expect(pm.response).to.have.header(\"Content-Type\");\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r",
+							"});\r",
+							"\r",
+							"// validacion de status code\r",
+							"pm.test(\"Status code is 200\", function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"});\r",
+							"\r",
+							"// validacion de SLA\r",
+							"const delay = 1500;\r",
+							"pm.test(\"Response time is less than \"+delay+\"ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(delay);\r",
+							"});\r",
+							"\r",
+							"/*\r",
+							"// validacion  de estructura \"en duro\"\r",
+							"pm.test(\"Response is an array\", function(){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an(\"array\");\r",
+							"    pm.expect(jsonData).to.be.not.empty;\r",
+							"    pm.expect(jsonData[0]).to.be.an(\"object\");\r",
+							"    pm.expect(jsonData[0].code).to.be.a(\"string\");\r",
+							"    pm.expect(jsonData[0].title).to.be.a(\"string\");\r",
+							"});\r",
+							"\r",
+							"// validacion de estructura contra schema \r",
+							"const schema = {\r",
+							"\t\t\"type\": \"array\",\r",
+							"\t\t\"items\": {\r",
+							"\t\t\t\"type\": \"object\",\r",
+							"            \"required\": [\"code\",\"title\",\"description\",\"uri\"],\r",
+							"            \"properties\": {\r",
+							"                \"code\": { \"type\":  [\"string\"] },\r",
+							"                \"title\": { \"type\":  [\"string\"] },\r",
+							"                \"description\": { \"type\":  [\"string\"] },\r",
+							"                \"uri\": { \"type\":  [\"string\"] }\r",
+							"            }\r",
+							"        }\r",
+							"};\r",
+							"\r",
+							"pm.test('Schema is valid', function() {\r",
+							"  pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest/msdxc/saldo?sueldo=1500000&ahorro=71400000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"msdxc",
+						"saldo"
+					],
+					"query": [
+						{
+							"key": "sueldo",
+							"value": "1500000"
+						},
+						{
+							"key": "ahorro",
+							"value": "71400000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "impuesto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//https://learning.postman.com/docs/writing-scripts/script-references/test-examples/#testing-response-times\r",
+							"console.log(pm.response.json()[0]);\r",
+							"\r",
+							"// validacion de headers\r",
+							"pm.test(\"Content-Type\", function () {\r",
+							"    pm.expect(pm.response).to.have.header(\"Content-Type\");\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r",
+							"});\r",
+							"\r",
+							"// validacion de status code\r",
+							"pm.test(\"Status code is 200\", function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"});\r",
+							"\r",
+							"// validacion de SLA\r",
+							"const delay = 15000;\r",
+							"pm.test(\"Response time is less than \"+delay+\"ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(delay);\r",
+							"});\r",
+							"\r",
+							"/*\r",
+							"// validacion  de estructura \"en duro\"\r",
+							"pm.test(\"Response is an array\", function(){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an(\"array\");\r",
+							"    pm.expect(jsonData).to.be.not.empty;\r",
+							"    pm.expect(jsonData[0]).to.be.an(\"object\");\r",
+							"    pm.expect(jsonData[0].code).to.be.a(\"string\");\r",
+							"    pm.expect(jsonData[0].title).to.be.a(\"string\");\r",
+							"});\r",
+							"\r",
+							"// validacion de estructura contra schema \r",
+							"const schema = {\r",
+							"\t\t\"type\": \"array\",\r",
+							"\t\t\"items\": {\r",
+							"\t\t\t\"type\": \"object\",\r",
+							"            \"required\": [\"code\",\"title\",\"description\",\"uri\"],\r",
+							"            \"properties\": {\r",
+							"                \"code\": { \"type\":  [\"string\"] },\r",
+							"                \"title\": { \"type\":  [\"string\"] },\r",
+							"                \"description\": { \"type\":  [\"string\"] },\r",
+							"                \"uri\": { \"type\":  [\"string\"] }\r",
+							"            }\r",
+							"        }\r",
+							"};\r",
+							"\r",
+							"pm.test('Schema is valid', function() {\r",
+							"  pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest/msdxc/impuesto?sueldo=1500000&ahorro=71400000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"msdxc",
+						"impuesto"
+					],
+					"query": [
+						{
+							"key": "sueldo",
+							"value": "1500000"
+						},
+						{
+							"key": "ahorro",
+							"value": "71400000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
