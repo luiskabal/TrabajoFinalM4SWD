@@ -28,12 +28,13 @@ pipeline {
                     bat 'mvn clean test -Dtest=UtilTest -DrequestsToEnv= test' //Windows
                 }
             }
-            stage ('Postman') {
+	    /*stage ('Postman') {
                 steps {
                     //sh 'newman run src/test/postman/dxc.json --delay-request 1000 -n 2' //Linux / macOS
                     bat 'newman run src/test/postman/dxc.json --delay-request 1000 -n 2' //Windows
                 }
-            }
+            }*/
+            
             stage ('Selenium') {
                 steps {
                     //sh 'mvn clean test -Dtest=SeleniumTest -DrequestsToEnv= test' //Linux / macOS
