@@ -8,13 +8,6 @@ pipeline {
                     bat './mvnw.cmd clean compile -e' //Windows
                 }
             }
-            
-            stage('Test') {
-                steps {
-                    //sh './mvnw clean test -e' //Linux / macOS
-                    bat 'mvn clean test -Dtest=UtilTest -DrequestsToEnv= test' //Windows
-                }
-            }
             stage('Jar') {
                 steps {
                     //sh './mvnw clean package -e' //Linux / macOS
@@ -25,6 +18,13 @@ pipeline {
                 steps {
                     //sh 'nohup bash mvnw spring-boot:run &' //Linux / macOS
                     bat 'nohup bash mvnw.cmd spring-boot:run &' //Windows
+                }
+            }
+			
+			stage('Test') {
+                steps {
+                    //sh './mvnw clean test -e' //Linux / macOS
+                    bat 'mvn clean test -Dtest=UtilTest -DrequestsToEnv= test' //Windows
                 }
             }
             stage ('Postman') {
