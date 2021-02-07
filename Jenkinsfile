@@ -38,7 +38,7 @@ pipeline {
 	      stage ('Postman') {
                 steps {
                     //sh 'newman run src/test/postman/dxc.json --delay-request 1000 -n 2' //Linux / macOS
-                    bat 'newman run src/test/postman/dxc.json --delay-request 1000 -n 2' //Windows
+                    bat 'newman run src/test/postman/dxc.json --delay-request 1000 --disable-unicode –-no-color -n 2' //Windows
                 }
             }
     }

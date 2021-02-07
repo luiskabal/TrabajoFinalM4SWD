@@ -113,3 +113,80 @@ Caused by: java.net.BindException: La dirección ya se está usando
 [INFO] Total time:  5.493 s
 [INFO] Finished at: 2021-02-04T00:07:14-03:00
 [INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.devops.dxc:devops >------------------------
+[INFO] Building devops 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:2.4.2:run (default-cli) > test-compile @ devops >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ devops ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ devops ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ devops ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory C:\Users\ayanez3\Desktop\DEVOPS\TrabajoFinalM4SWD\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ devops ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\Users\ayanez3\Desktop\DEVOPS\TrabajoFinalM4SWD\target\test-classes
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:2.4.2:run (default-cli) < test-compile @ devops <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.4.2:run (default-cli) @ devops ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.2)
+
+2021-02-07 18:17:43.722  INFO 20648 --- [  restartedMain] com.devops.dxc.devops.DevopsApplication  : Starting DevopsApplication using Java 11 on l-ayanez3-w7 with PID 20648 (C:\Users\ayanez3\Desktop\DEVOPS\TrabajoFinalM4SWD\target\classes started by AYANEZ3 in C:\Users\ayanez3\Desktop\DEVOPS\TrabajoFinalM4SWD)
+2021-02-07 18:17:43.729  INFO 20648 --- [  restartedMain] com.devops.dxc.devops.DevopsApplication  : No active profile set, falling back to default profiles: default
+2021-02-07 18:17:43.832  INFO 20648 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 18:17:43.833  INFO 20648 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-07 18:17:46.271  INFO 20648 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2021-02-07 18:17:46.282  INFO 20648 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-07 18:17:46.282  INFO 20648 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-07 18:17:46.390  INFO 20648 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-07 18:17:46.390  INFO 20648 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2555 ms
+2021-02-07 18:17:46.623  INFO 20648 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-07 18:17:46.861  INFO 20648 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-07 18:17:46.900  WARN 20648 --- [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8082 is already in use
+2021-02-07 18:17:46.901  INFO 20648 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-07 18:17:46.904  INFO 20648 --- [  restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-02-07 18:17:46.930  INFO 20648 --- [  restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-07 18:17:46.957 ERROR 20648 --- [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8082 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8082 or configure this application to listen on another port.
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.487 s
+[INFO] Finished at: 2021-02-07T18:17:47-03:00
+[INFO] ------------------------------------------------------------------------
