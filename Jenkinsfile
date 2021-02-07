@@ -8,12 +8,12 @@ pipeline {
                     bat './mvnw.cmd clean compile -e' //Windows
                 }
             }
-            stage('Jar') {
+           /* stage('Jar') {
                 steps {
                     //sh './mvnw clean package -e' //Linux / macOS
                     bat './mvnw.cmd clean package -e' //Windows
                 }
-            }
+            }*/
             stage ('Run Jar') {
                 steps {
                     //sh 'nohup bash mvnw spring-boot:run &' //Linux / macOS
