@@ -6,7 +6,6 @@ pipeline {
                 steps {
                     sh './mvnw clean compile -e' //Linux / macOS
                     //bat './mvnw.cmd clean compile -e' //Windows
-
                 }
             }
             
@@ -29,12 +28,16 @@ pipeline {
                 }
             }
             stage ('Postman') {
-                sh 'newman run src/test/postman/dxc.json --delay-request 1000 -n 2' //Linux / macOS
-                //bat 'newman run src/test/postman/dxc.json --delay-request 1000 -n 2' //Windows
+                steps {
+                    sh 'newman run src/test/postman/dxc.json --delay-request 1000 -n 2' //Linux / macOS
+                    //bat 'newman run src/test/postman/dxc.json --delay-request 1000 -n 2' //Windows
+                }
             }
             stage ('Selenium') {
-                sh 'mvn clean test -Dtest=SeleniumTest -DrequestsToEnv= test' //Linux / macOS
-                //bat 'mvn clean test -Dtest=SeleniumTest -DrequestsToEnv= test' //Windows
+                steps {
+                    sh 'mvn clean test -Dtest=SeleniumTest -DrequestsToEnv= test' //Linux / macOS
+                    //bat 'mvn clean test -Dtest=SeleniumTest -DrequestsToEnv= test' //Windows
+                }
             }
     }
 }
