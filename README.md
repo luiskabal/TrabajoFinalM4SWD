@@ -17,7 +17,7 @@
 
 ### Testing Application
 #### Ahorro y sueldo valores a modificar
-* Abrir navegador: http://localhost:8080/rest/msdxc/test?sueldo=1500000&ahorro=71400000
+* Abrir navegador: http://localhost:8082/rest/msdxc/test?sueldo=1500000&ahorro=71400000
 
 
 ### postman
@@ -48,8 +48,8 @@ mvn clean test -Dtest=SeleniumTest -DrequestsToEnv= test
 
 ### Endpoints
 ## 10%
-http://localhost:8080/rest/msdxc/dxc?sueldo=1500000&ahorro=71400000
+http://localhost:8082/rest/msdxc/dxc?sueldo=1500000&ahorro=71400000
 ## Saldo restante
-http://localhost:8080/rest/msdxc/saldo?sueldo=1500000&ahorro=71400000
+http://localhost:8082/rest/msdxc/saldo?sueldo=1500000&ahorro=71400000
 ## Impuesto
-http://localhost:8080/rest/msdxc/impuesto?sueldo=1500000&ahorro=71400000
+http://localhost:8082/rest/msdxc/impuesto?sueldo=1500000&ahorro=71400000
