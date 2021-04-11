@@ -27,9 +27,9 @@ pipeline {
         }
         stage ('Build Docker') {
             steps {
+                script {
                 dockerImage = docker.build imagename
-            
-            }
+                }}
         }
     }
 }
