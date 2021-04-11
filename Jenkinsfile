@@ -3,7 +3,7 @@ pipeline {
     environment { 
         GROUP = 'Grupo4'
         dockerImage = ''
-        imagename = "test_Devops_Usach_Diplomado_Imagen_Docker_"
+        imagename = "test_Devops_Usach_Diplomado_Imagen_Docker"
     }
     stages {
             stage('Compile') {
@@ -27,7 +27,7 @@ pipeline {
         }
         stage ('Build Docker') {
             steps {
-                    dockerImage = docker.build imagename+GROUP
+                dockerImage = docker.build imagename
             
             }
         }
